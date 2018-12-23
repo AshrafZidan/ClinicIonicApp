@@ -1,0 +1,69 @@
+<ion-content padding class="signup-form" overflow-scroll="false">
+
+    <ion-navbar></ion-navbar>
+
+    <div class="logo animated fadeInDown">
+        <img src="assets/img/logo.png" alt="shuryan-logo">
+    </div>
+    <form [formGroup]="signUpForm" (ngSubmit)="signUp()">
+
+        <ion-list>
+
+            <!-- fullName field -->
+            <ion-item class="item1 animated fadeInDown">
+                <ion-label floating [style.transform-origin]="language === 'en' ?'left':''">
+                    <ion-icon [ngClass]="language === 'en' ?'iconEn':'iconAr'" name="ios-contact"></ion-icon>
+                    {{ 'userName' | translate }}
+                </ion-label>
+                <ion-input formControlName="username" [(ngModel)]="userName" type="text"></ion-input>
+            </ion-item>
+            <p class="validationHint" *ngIf="hasError('username', 'required')">{{ 'require' | translate }}</p>
+            <p class="validationHint" *ngIf="hasError('username', 'minlength')">{{ 'minLenght8' | translate }}</p>
+            <p class="validationHint" *ngIf="hasError('username', 'maxlength')">{{ 'maxLenght' | translate }}</p>
+            <!-- mobNo. field -->
+            <ion-item class="item2 animated fadeInDown">
+                <ion-label floating [style.transform-origin]="language === 'en' ?'left':''">
+                    <ion-icon [ngClass]="language === 'en' ?'iconEn':'iconAr'" name="ios-phone-portrait-outline"></ion-icon>
+                    {{ 'phoneOrEmail' | translate }}
+                </ion-label>
+                <ion-input formControlName="phonenumber" [(ngModel)]="userPhone" type="tel"></ion-input>
+            </ion-item>
+            <p class="validationHint" *ngIf="hasError('phonenumber', 'required')">{{ 'require' | translate }}</p>
+            <p class="validationHint" *ngIf="hasError('phonenumber', 'pattern')">أدخل رقم موبايل صحيح</p>
+            <p class="validationHint" *ngIf="hasError('phonenumber', 'minlength')">{{ 'minLenght11' | translate }}</p>
+
+            <!-- password field -->
+            <ion-item class="item3 animated fadeInDown">
+                <ion-label floating [style.transform-origin]="language === 'en' ?'left':''">
+                    <ion-icon [ngClass]="language === 'en' ?'iconEn':'iconAr'" name="ios-lock-outline"></ion-icon>
+                    {{ 'Password' | translate }}
+                </ion-label>
+                <ion-input formControlName="password" [(ngModel)]="userPassword" type="password"></ion-input>
+            </ion-item>
+            <p class="validationHint" *ngIf="hasError('password', 'required')">{{ 'require' | translate }}</p>
+            <span class="validationHint">
+            <p *ngIf="hasError('password', 'minlength')">{{ 'minLenght8' | translate }}</p>
+            <p *ngIf="hasError('password', 'maxlength')">{{ 'maxLenghtNumChar' | translate }}</p>
+
+      </span>
+
+            <!-- confirm password field -->
+            <ion-item class="item4 animated fadeInDown">
+                <ion-label floating [style.transform-origin]="language === 'en' ?'left':''">
+                    <ion-icon [ngClass]="language === 'en' ?'iconEn':'iconAr'" name="ios-lock-outline"></ion-icon>
+                    {{ 'confirmPassword' | translate }}
+                </ion-label>
+                <ion-input formControlName="confirmPassword" [(ngModel)]="userconPassword" type="password"></ion-input>
+            </ion-item>
+            <div *ngIf="userconPassword !=null">
+                <p class="validationHint" *ngIf="!matchingPasswords(userPassword,userconPassword)">{{ 'notMatch' | translate }}</p>
+            </div>
+        </ion-list>
+        <p class="noMatchUserOrPass animated fadeInDown" *ngIf="isCorrect">{{ 'userExist' | translate }}</p>
+
+        <!-- form Btns -->
+        <button ion-button block type="submit" [disabled]="!signUpForm.valid || !matchingPasswords(userPassword,userconPassword)" class="animated fadeInDown">{{ 'but_singUp' | translate }}</button>
+    </form>
+
+
+</ion-content>

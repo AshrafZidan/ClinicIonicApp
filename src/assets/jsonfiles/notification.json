@@ -1,0 +1,52 @@
+[
+{
+"notificationtitle":"قرار إدارى رقم 7",
+"notificationbody":"تم إضافة الحوافز السنوية لجميع العاملين بالشركة ابتداء من شهر 8 فى عام 2017 وبالتوفيق",
+"notificationdate":"مايو 27",
+"notificationstatus":"new",
+"notificationview":"false"
+}
+,{
+"notificationtitle":"رحلة الى مرسى علم ",
+"notificationbody":"تم تجهيز رحلة الى المدينه الساحرة مرسى علم يوم الخميس القادم على العاملين تأكيد الاشتراك بالرحلة",
+"notificationdate":"مايو 26",
+"notificationstatus":"new",
+"notificationview":"false"
+}
+,{
+"notificationtitle":"قرار إدارى رقم 6",
+"notificationbody":"تم إضافة الحوافز السنوية لجميع العاملين بالشركة ابتداء من شهر 8 فى عام 2017 وبالتوفيق",
+"notificationdate":"مايو 24",
+"notificationstatus":"null",
+"notificationview":"true"
+}
+,{
+"notificationtitle":"طلب سلفة 1000 جنيه",
+"notificationbody":"برجاء الموافقة على طلب سبفة 1000 جنية وذلك لشراء جهاز جديد ",
+"notificationdate":"مايو 20",
+"notificationstatus":"wating",
+"notificationview":"false"
+}
+,{
+"notificationtitle":"تم تأكيد الأجازة العارضة",
+"notificationbody":"تم تأكيد الاجازة العارضة يوم الخميس القام ",
+"notificationdate":"مايو 20",
+"notificationstatus":"sured",
+"notificationview":"true"
+}
+,{
+"notificationtitle":"قرار إدارى رقم 5",
+"notificationbody":"تم إضافة الحوافز السنوية لجميع العاملين بالشركة ابتداء من شهر 8 فى عام 2017 وبالتوفيق",
+"notificationdate":"إبريل 25",
+"notificationstatus":"refuse",
+"notificationview":"true"
+}
+,{
+"notificationtitle":"تم تأكيد الأجازة المرضية",
+"notificationbody":"تم تأكيد الاجازة العارضة يوم الخميس القام ",
+"notificationdate":"فبراير 20",
+"notificationstatus":"sured",
+"notificationview":"true"
+}
+
+]

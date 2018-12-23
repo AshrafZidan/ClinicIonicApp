@@ -1,0 +1,105 @@
+<ion-header>
+    <ion-navbar>
+        <ion-title>تعديل البيانات</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+    <!-- edit fullName-->
+    <ion-item *ngIf="attrubiteName=='userName'">
+        <ion-label floating>الأسم بالكامل</ion-label>
+        <ion-input type="text" value="{{attrubiteValue}}" [(ngModel)]="attrubiteValue"></ion-input>
+    </ion-item>
+
+    <!-- edit job-->
+    <ion-item *ngIf="attrubiteName=='userJob'">
+        <ion-label floating>الوظيفة</ion-label>
+        <ion-input type="text" value="{{attrubiteValue}}" [(ngModel)]="attrubiteValue"></ion-input>
+    </ion-item>
+
+
+    <!-- edit birthdate -->
+    <ion-item *ngIf="attrubiteName=='birthdate'">
+        <ion-label>تاريخ الميلاد</ion-label>
+        <ion-datetime displayFormat="DD-MM-YYYY" doneText="تأكيد" cancelText="إلغاء" [(ngModel)]="attrubiteValue"></ion-datetime>
+    </ion-item>
+
+    <!-- edit phoneNo -->
+    <ion-item *ngIf="attrubiteName=='phone'">
+        <ion-label floating>رقم الموبيل</ion-label>
+        <ion-input type="tel" value="{{attrubiteValue}}"></ion-input>
+    </ion-item>
+
+
+    <!-- edit phoneNo -->
+    <ion-item *ngIf="attrubiteName=='mobile'">
+        <ion-label floating>هاتف المنزل</ion-label>
+        <ion-input type="tel" value="{{attrubiteValue}}"></ion-input>
+    </ion-item>
+
+
+    <!-- edit email -->
+    <ion-item *ngIf="attrubiteName=='email'">
+        <ion-label floating>البريد الألكترونى</ion-label>
+        <ion-input type="email" value="{{attrubiteValue}}" [(ngModel)]="attrubiteValue"></ion-input>
+    </ion-item>
+
+    <!-- edit address -->
+    <ion-item *ngIf="attrubiteName=='address'">
+        <ion-label floating>عنوان المنزل</ion-label>
+        <ion-input type="text" value="{{attrubiteValue}}" [(ngModel)]="attrubiteValue"></ion-input>
+    </ion-item>
+
+
+    <!-- edit address -->
+    <ion-item *ngIf="attrubiteName=='blood'">
+        <ion-label floating>فصيلة الدم</ion-label>
+        <ion-input type="text" value="{{attrubiteValue}}" [(ngModel)]="attrubiteValue"></ion-input>
+    </ion-item>
+
+
+    <!-- edit birthdate -->
+    <ion-item *ngIf="attrubiteName=='jobDate'">
+        <ion-label>تاريخ التعين</ion-label>
+        <ion-datetime displayFormat="DD-MM-YYYY" doneText="تأكيد" cancelText="إلغاء" [(ngModel)]="attrubiteValue"></ion-datetime>
+    </ion-item>
+
+    <!-- edit address -->
+    <ion-item *ngIf="attrubiteName=='hall'">
+        <ion-label floating> الحالة الإجتماعية</ion-label>
+        <ion-input type="text" value="{{attrubiteValue}}" [(ngModel)]="attrubiteValue"></ion-input>
+    </ion-item>
+
+    <!-- edit address -->
+    <ion-item *ngIf="attrubiteName=='code'">
+        <ion-label floating> كود الدخول</ion-label>
+        <ion-input type="text" value="{{attrubiteValue}}" [(ngModel)]="attrubiteValue"></ion-input>
+    </ion-item>
+
+
+
+
+</ion-content>
+
+<!-- update Btns-->
+<ion-footer no-shadow>
+    <ion-grid no-padding>
+        <ion-row>
+            <ion-col col-6>
+                <button ion-button full class="updateBtn" *ngIf="attrubiteName!=='password'" [disabled]="attrubiteValue==''||attrubiteValue==null" (click)="updateDriverProfile()">
+            حفظ
+        </button>
+
+            </ion-col>
+            <ion-col col-6>
+                <button ion-button full outline class="cancelBtn" (click)="cancelEdit()">
+            إلغاء
+        </button>
+                <!--<button ion-button full outline class="cancelBtn" *ngIf="attrubiteName =='password'" (click)="cancelEditPass()">
+            إلغاء
+        </button>-->
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-footer>

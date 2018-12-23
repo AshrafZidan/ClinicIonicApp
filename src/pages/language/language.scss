@@ -1,0 +1,50 @@
+page-language {
+  .mainscreen {
+    @extend %bg-option;
+    background-image: $mainBackground;
+    .logo {
+      text-align: center;
+      img {
+        width: 200px;
+        height: 200px;
+        margin: 25% 0 1%;
+        @media only screen and (min-width: $breakpoint-phone) {
+          width: 250px;
+          height: 250px;
+          margin: 100px 0 1%;
+        }
+        @media only screen and (min-width: $breakpoint-tablet) {
+          width: 250px;
+          height: 250px;
+          margin: 100px 0 1%;
+        }
+        @media only screen and (min-width: $breakpoint-desktop) {
+          width: 250px;
+          height: 250px;
+          margin: 100px 0 1%;
+        }
+      }
+    }
+    .namecompany {
+      text-align: center;
+      margin: 10px 0 40px 0;
+      font-size: 20px;
+      color: $main-color;
+    }
+    .languageBtns {
+      text-align: center;
+      button {
+        width: 130px;
+        height: 40px;
+        margin: 0 5px;
+        display: inline-block;
+      }
+    }
+  }
+  ion-footer {
+    text-align: center;
+    .powerd {
+      color: $main-color;
+    }
+  }
+}

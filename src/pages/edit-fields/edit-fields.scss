@@ -1,0 +1,76 @@
+edit-fields-page {
+  .item-md {
+    padding-left: 0;
+    background-color: transparent;
+    font-size: $main-font-size;
+    &.item-block .item-inner {
+      padding-right: 0;
+      border-bottom: none;
+    }
+  }
+  .input-has-focus .label-md[floating],
+  .input-has-value .label-md[floating] {
+    -webkit-transform: translate3d(0, -9px, 0) scale(0.8);
+    -moz-transform: translate3d(0, -9px, 0) scale(0.8);
+    -ms-transform: translate3d(0, -9px, 0) scale(0.8);
+    transform: translate3d(0, -9px, 0) scale(0.8);
+  }
+  .item-label-stacked .text-input-md,
+  .item-label-floating .text-input-md {
+    margin-top: 10px;
+  }
+  .item-input {
+    ion-input {
+      height: 45px;
+      border: $main-border;
+      margin-top: -6px;
+    }
+    &:last-child {
+      border-bottom: 0;
+    }
+  }
+  .card-md {
+    padding: 0 10px;
+    margin: 10px 0 10px 0;
+    width: 100%;
+  }
+  .list-header-md {
+    padding-right: 0 !important;
+    margin: 0;
+    border-bottom: $main-border;
+  }
+  .item-datetime {
+    border: $main-border;
+  }
+  .updateBtn {
+    margin: 0;
+    height: 45px;
+  }
+  .cancelBtn {
+    margin: 0;
+    height: 45px;
+    border-right-width: 1px !important;
+    border-left-width: 1px !important;
+  }
+  .validationHint {
+          position: absolute;
+          background: #fff6d3;
+          margin: 5px auto;
+          padding: 0 15px;
+          z-index: 99;
+          line-height: 35px;
+          width: 91%;
+          font-size: $main-font-size - 2;
+          box-shadow: -2px -2px 0px 0px #e2dab7 inset;
+          p {
+            margin: 0;
+          }
+        }
+         .text-input-wp{
+       border: 0px solid rgba(0, 0, 0, 0.5); 
+  }
+  .datetime-wp .datetime-text {
+       border: 0px solid rgba(0, 0, 0, 0.5); 
+    
+  }
+}

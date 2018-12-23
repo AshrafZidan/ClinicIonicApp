@@ -1,0 +1,7 @@
+{
+  "name": "mobiletemplete",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}

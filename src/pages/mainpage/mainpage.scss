@@ -1,0 +1,54 @@
+page-mainpage {
+    .toolbar-title-md {
+        text-align: center;
+    }
+    ion-content {
+        // @extend %bg-option;
+        // background-image: $mainBackground;
+        button.backButton {
+            float: left;
+            font-size: 2rem;
+            color: #ffffff;
+        }
+        button.menuButton {
+            font-size: 2rem;
+            color: #ffffff;
+            margin: 0px;
+        }
+        div.title {
+            background-color: #36618b;
+            font-size: $main-font-size;
+            padding: 5px;
+            color: #ffffff;
+            text-align: center;
+        }
+        div.mainheader {
+            background-image: url(../assets/img/homebackground.jpg);
+            background-size: cover;
+            padding-bottom: 10px;
+        }
+        .userPhoto {
+            @extend %bg-option;
+            //  background-color: #36618b;
+            background-size: cover;
+            text-align: center;
+            img {
+                border-radius: 50%;
+                width: 60px;
+                height: 60px;
+                border: 2px solid #ffffff;
+            }
+            ion-label {
+                font-size: $main-font-size;
+                color: #ffffff;
+                margin: 0px 8px 2px 0;
+            }
+            ion-label.job {
+                margin: 0px;
+            }
+            #nameLable {
+                font-size: 15px;
+            }
+        }
+    }
+}

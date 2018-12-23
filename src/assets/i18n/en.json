@@ -1,0 +1,63 @@
+{
+    "AppName": "ESS",
+    "phoneOrEmail": "Phone Number",
+    "Password": "Password",
+    "Login": "Login",
+    "ForgetPassword": "Forget Password ?",
+    "register": "New Account",
+    "forgetPasswordText": "Please Enter Your Nunmber To send Verify code over Mobile Message",
+    "phone": "Phone Number",
+    "----------------------------------------------------- Validation -----------------------------------------------------------": "",
+    "require": "This data is Required",
+    "minLenght8": "This field must be at least 8 characters",
+    "maxLenght": "This field must not exceed 128 characters",
+    "minLenght11": "This field must be at least 11 characters",
+    "maxLenghtNumChar": "This field must not exceed 20 characters or a number",
+    "notMatch": "password does not match",
+    "userExist": "This user already exists",
+    "wrongPhone": "The Phone Is Wrong",
+    "----------------------------------------------------- sing up -----------------------------------------------------------": "",
+    "userName": "Full Name",
+    "confirmPassword": "Confirm Password",
+    "but_singUp": "Sing Up",
+    "verify": "Verify",
+    "----------------------------------------------------- Verify Page -----------------------------------------------------------": "",
+
+    "verifyText": "Enter the confirmation code sent to you via the mobile message",
+    "code": "Confirmation code",
+    "codeError": "There is an error in the confirmation code",
+    "sucessfulCode": "Password set successfully",
+
+    "----------------------------------------------------- ForgetPassword Page -----------------------------------------------------------": "",
+    "orderCode": "Request code",
+    "incorectUsername": "Invalid username",
+    "errorCode": "Incorrect confirmation code, please enter correct code",
+    "reset": "Reset",
+    "resendCode": "Resend Code",
+    "sendCode": "Code Sent Successfully",
+
+    "----------------------------------------------------- main Page -----------------------------------------------------------": "",
+    "newestNotification": "Latest Notification",
+
+    "----------------------------------------------------- Menu -----------------------------------------------------------": "",
+
+
+    "orders": "my Requests",
+    "profile": "Profile",
+    "movratat": "salary Vocabulary",
+    "holidays": "Vacations",
+    "rewards": "Competencies",
+    "adds": "Advertising",
+    "oppentions": "Polls",
+    "problems": "Complaints and Suggestions",
+    "lists": "Rules of Procedure",
+    "logout": "log out",
+
+
+    "newNotification": "New Notification",
+
+    "----------------------------------------------------- General -----------------------------------------------------------": "",
+    "pleaseWait": "Please Wait"
+
+
+}

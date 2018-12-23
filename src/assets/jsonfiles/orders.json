@@ -1,0 +1,45 @@
+[
+{
+"notificationtitle":"تم تأكيد الأجازة العارضة",
+"notificationbody":"تم تأكيد يوم الثلاثاء القادم الموافق 12/6 أجازة عرضة وذلك لشراء بعض الاستلزامات الازمه لعمل اللازم لانه شى مهم جداً ",
+"notificationdate":"يونيو 25",
+"notificationstatus":"new",
+"notificationview":"false"
+}
+,{
+"notificationtitle":"طلب سلفة 500 جنية",
+"notificationbody":"برجاء الموافقة على سلفة 500 جنية من المرتب لظروف خاصة جدا لا يمكن ذكرها ",
+"notificationdate":"مايو 24",
+"notificationstatus":"sured",
+"notificationview":"true"
+}
+,{
+"notificationtitle":"أجازة عارضة يوم 1 / 6",
+"notificationbody":"برجاء الموافقة يوم الثلاثاء القادم الموافق 1/6 أجازة عارضة ",
+"notificationdate":"مايو 20",
+"notificationstatus":"wating",
+"notificationview":"false"
+}
+,{
+"notificationtitle":"تم تأكيد الأجازة العارضة",
+"notificationbody":"تم تأكيد يوم الاربعاء القادم الموافق 14 / 6 أجازة عارضة",
+"notificationdate":"مايو 20",
+"notificationstatus":"sured",
+"notificationview":"true"
+}
+,{
+"notificationtitle":"إذن تأخير غداً",
+"notificationbody":"برجاء الموافقة على إذن تأخير غداً وذلك لظروف خاصة ",
+"notificationdate":"إبريل 25",
+"notificationstatus":"refuse",
+"notificationview":"true"
+}
+,{
+"notificationtitle":"طلب سلفة 700 جنية",
+"notificationbody":"برجاء الموافقة على سلفة 700 جنيه من المرتب وذلك لاستلزامات خاصة",
+"notificationdate":"فبراير 20",
+"notificationstatus":"sured",
+"notificationview":"true"
+}
+
+]

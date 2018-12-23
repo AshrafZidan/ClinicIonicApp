@@ -1,0 +1,83 @@
+page-profile {
+  .toolbar-title-md {
+    text-align: center;
+  }
+  
+  ion-content {
+    @extend %bg-option;
+    background-image: $mainBackground;
+    button.backButton{
+        float: left;
+        font-size: 2rem;
+        color: #ffffff;
+    }
+    button.menuButton{
+           font-size: 2rem;
+        color: #ffffff; 
+    }
+    div.header{
+            background-color: #36618b;
+    }
+    .userPhoto {
+      @extend %bg-option;
+    background-color: #36618b;
+      background-size: cover;
+      text-align: center;
+            padding-bottom: 10px;
+
+      img {
+        border-radius: 50%;
+        width: 80px;
+        height: 80px;
+        border: 2px solid #ffffff;
+      }
+    
+      ion-label {
+        font-size: $main-font-size;
+        color: #ffffff;
+        margin: 6px 8px 13px 0;
+      }
+      ion-label.job {
+      margin: 0px;
+      }
+    
+    }
+    
+    
+    .profileData {
+
+      ion-list {
+        margin: 0;
+      }
+      ion-item {
+        padding: 0;
+        margin: 0px;
+        &.item-block .item-inner {
+          padding: 0 0px 0 0px;
+          border-bottom: 1px solid #dedede;
+        }
+      }
+        i.update{  
+            color: #36618b;
+            font-size: $main-font-size - 1;
+            font-style: inherit;
+            padding-left: 5px;
+      }
+
+      .labelName {
+        color: #000000;
+        margin-bottom: 5px;
+        font-size: $main-font-size;       
+      }
+      .nameValue{
+        color: $light-text-color;
+        font-size: $main-font-size - 1;       
+          
+      }
+      i {
+        color: #ccc;
+      }
+    }
+  }
+
+}

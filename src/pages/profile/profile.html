@@ -1,0 +1,122 @@
+<!--
+  Generated template for the Profile page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+
+
+
+<ion-content>
+    <div class="header">
+        <button class="menuButton" end ion-button clear menuToggle><ion-icon name="menu"></ion-icon></button>
+        <button (click)="back()" class="backButton" ion-button clear><ion-icon ios="ios-arrow-back" md="md-arrow-back"></ion-icon></button>
+    </div>
+    <!-- userPhoto -->
+    <div class="userPhoto animated fadeInDown">
+        <!-- userPhoto -->
+        <img src="assets/img/user4.png" alt="userImg">
+        <!-- userName -->
+        <ion-label>محمد أحمد على</ion-label>
+        <ion-label class="job">مدير قسم البرمجه والتطوير</ion-label>
+
+    </div>
+
+
+
+    <!-- profileContent -->
+
+    <!-- myInfo tab -->
+    <div class="profileData ">
+        <!-- full name -->
+        <!--<ion-list class="animated fadeInUp">-->
+        <ion-item (click)="updateFields('userName',userData.username)">
+            <p class="labelName">
+                الإسم بالكامل
+            </p>
+            <p class="nameValue">{{userData.username}}</p>
+            <i class="update" aria-hidden="true" item-right> تعديل</i>
+        </ion-item>
+        <ion-item (click)="updateFields('userJob',userData.userjob)">
+            <p class="labelName">
+                الوظيفة
+            </p>
+            <p class="nameValue">{{userData.userjob}}</p>
+            <i class="update" aria-hidden="true" item-right> تعديل</i>
+        </ion-item>
+        <ion-item (click)="updateFields('email',userData.useremail)">
+            <p class="labelName">
+                البريد الإلكتروني
+            </p>
+            <p class="nameValue">{{userData.useremail}}</p>
+            <i class="update" aria-hidden="true" item-right> تعديل</i>
+        </ion-item>
+        <ion-item (click)="updateFields('phone',userData.userphone)">
+            <p class="labelName">
+                رقم الموبيل
+            </p>
+            <p class="nameValue">{{userData.userphone}}</p>
+            <i class="update" aria-hidden="true" item-right> تعديل</i>
+        </ion-item>
+        <ion-item (click)="updateFields('mobile',userData.usermobile)">
+            <p class="labelName">
+                هاتف المنزل
+            </p>
+            <p class="nameValue">{{userData.usermobile}}</p>
+            <i class="update" aria-hidden="true" item-right> تعديل</i>
+        </ion-item>
+        <ion-item (click)="updateFields('address',userData.useraddress)">
+            <p class="labelName">
+                عنوان المنزل
+            </p>
+            <p class="nameValue">{{userData.useraddress}}</p>
+            <i class="update" aria-hidden="true" item-right> تعديل</i>
+        </ion-item>
+        <ion-item (click)="updateFields('birthdate',userData.userbirthday)">
+            <p class="labelName">
+                تاريخ الميلاد
+            </p>
+            <p class="nameValue">{{userData.userbirthday}}</p>
+            <i class="update" aria-hidden="true" item-right> تعديل</i>
+        </ion-item>
+        <ion-item (click)="updateFields('blood',userData.userblod)">
+            <p class="labelName">
+                فصيلة الدم
+            </p>
+            <p class="nameValue">{{userData.userblod}}</p>
+            <i class="update" aria-hidden="true" item-right> تعديل</i>
+        </ion-item>
+        <ion-item (click)="updateFields('jobDate',userData.userjobdata)">
+            <p class="labelName">
+                تاريخ التعين
+            </p>
+            <p class="nameValue">{{userData.userjobdata}}</p>
+            <i class="update" aria-hidden="true" item-right> تعديل</i>
+        </ion-item>
+        <ion-item (click)="updateFields('hall',userData.usersocialstatus)">
+            <p class="labelName">
+                الحالة الإجتماعية
+            </p>
+            <p class="nameValue">{{userData.usersocialstatus}}</p>
+            <i class="update" aria-hidden="true" item-right> تعديل</i>
+        </ion-item>
+        <ion-item (click)="updateFields('code',userData.usercode)">
+            <p class="labelName">
+                كود الدخول
+            </p>
+            <i class="update" aria-hidden="true" item-right> تعديل</i>
+        </ion-item>
+
+
+
+        <!--</ion-list>-->
+
+
+
+
+
+
+    </div>
+
+
+</ion-content>

@@ -1,0 +1,37 @@
+// hakam Font
+// Google
+// Apache License, version 2.0
+// http://www.apache.org/licenses/LICENSE-2.0.html
+$hakam-font-path: $font-path !default;
+@font-face {
+  font-family: "hakam";
+  font-style: normal;
+  font-weight: 400;
+  src: local("hakam Light"),
+  local("hakam-Light"),
+  url("#{$hakam-font-path}/hakam-light.woff2") format("woff2"),
+  url("#{$hakam-font-path}/hakam-light.woff") format("woff"),
+  url("#{$hakam-font-path}/hakam-light.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "hakam";
+  font-style: normal;
+  font-weight: 700;
+  src: local("hakam"),
+  local("hakam-Regular"),
+  url("#{$hakam-font-path}/hakam-regular.woff2") format("woff2"),
+  url("#{$hakam-font-path}/hakam-regular.woff") format("woff"),
+  url("#{$hakam-font-path}/hakam-regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "hakam-bold";
+  font-style: normal;
+  font-weight: 900;
+  src: local("hakam Bold"),
+  local("hakam-Bold"),
+  url("#{$hakam-font-path}/hakam-bold.woff2") format("woff2"),
+  url("#{$hakam-font-path}/hakam-bold.woff") format("woff"),
+  url("#{$hakam-font-path}/hakam-bold.ttf") format("truetype");
+}

@@ -1,0 +1,224 @@
+// http://ionicframework.com/docs/v2/theming/
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+// apply custom font globally
+* {
+  font-family: hakam-bold;
+}
+
+
+/**************************************************** Variables ******************************************************/
+
+// main colors
+$main-color: #36618b;
+$sec-color: #36618b;
+$third-color: #ffffff;
+$dark-text-color: #666666;
+$light-text-color: #999999;
+// main font-size
+$main-font-size: 14px;
+// main border
+$main-border: 1px solid;
+// default splash page background
+$mainBackground: url(../assets/img/main-bg.png);
+// responsive media query
+$breakpoint-xsphone: 320px;
+$breakpoint-phone: 480px;
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 992px;
+$breakpoint-xldesktop: 1200px;
+
+/**************************************************** Inheritance ****************************************************/
+
+// extend background options
+%bg-option {
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+// extend hr options
+%hr-option {
+  width: 60px;
+  border-top: 2px solid $sec-color;
+}
+
+
+/**************************************************** shared css rules **********************************************/
+
+ion-navbar.toolbar {
+  direction: ltr;
+}
+
+.toolbar-background {
+  border-color: transparent;
+  background: transparent;
+}
+
+.back-button-icon {
+  color: $third-color;
+}
+
+.back-button.show-back-button {
+  margin: 0;
+  padding: 0;
+}
+
+.toolbar-background {
+  background: $main-color;
+}
+
+.toolbar-title {
+  color: $third-color;
+  text-align: center;
+  font-size: $main-font-size;
+}
+
+.picker .picker-opts {
+  max-width: 50px !important;
+}
+
+.gm-style .gm-style-iw {
+  font-size: $main-font-size;
+  color: $main-color;
+  font-weight: 500;
+  line-height: 25px;
+}
+
+.action-sheet-wrapper {
+  max-width: 100%;
+}
+
+.action-sheet {
+  .action-sheet-button {
+    width: 50%;
+    border-left: $main-border;
+    font-size: $main-font-size;
+    &:last-child {
+      border-left: none;
+    }
+  }
+  .button-inner {
+    text-align: center;
+    display: block;
+  }
+  .action-sheet-icon {
+    margin: 0 5px 0 10px;
+    color: $sec-color;
+  }
+}
+
+.picker-opt {
+  width: 115%;
+  direction: ltr;
+}
+
+.menuContent {
+  color: $third-color;
+  ion-toolbar {
+    background-color: $main-color;
+  }
+  div.toolbar-content.toolbar-content-wp {
+    height: 100%;
+    background-color: $main-color;
+    padding: 10px;
+  }
+  div.toolbar-content.toolbar-content-ios {
+    height: 100%;
+    background-color: $main-color;
+    padding: 10px;
+  }
+  .headermenu {
+    background-color: $main-color;
+    height: 25%;
+    padding: 0 10px;
+    img {
+      float: right;
+      border-radius: 50%;
+      width: 70px;
+      height: 70px;
+      border: 2px solid $third-color;
+    }
+    span {
+      display: inline-block;
+      margin: 10px 0px 0 0;
+      padding: 5px 10px
+    }
+    p {
+      display: inline-block;
+      margin: 0px 5px 0 0;
+      padding: 5px 10px;
+      font-size: 12px;
+    }
+  }
+  .list {
+    margin-top: 10px;
+  }
+  .item {
+    color: $main-color;
+    background: $third-color;
+    padding-left: 0;
+    font-size: $main-font-size;
+    .item-inner {
+      border-bottom: 0px solid #dedede;
+    }
+    ion-icon {
+      display: inline-block;
+      font-size: $main-font-size + 6;
+    }
+  }
+}
+
+.menuFooter {
+  border-top: 1px solid #a8c5d8;
+  height: 75px;
+  .button-clear-md {
+    color: #a4c2d6;
+    margin-top: 20px;
+  }
+}
+
+.netOffInfo {
+  position: absolute;
+  background: #ca2222;
+  width: 100%;
+  z-index: 99999;
+}
+
+.netparagrap {
+  text-align: center;
+  margin: 7px 0 !important;
+  padding-top: 5px;
+  font-size: $main-font-size;
+  color: $third-color;
+}
+
+.label {
+  margin: 13px 8px;
+}
+
+.menuContent {
+  .scroll-content {
+    overflow-y: hidden;
+  }
+}
+
+.mainheader {
+  .header {
+    padding: 10px 0;
+  }
+}
+
+.button-md {
+  text-transform: capitalize;
+}

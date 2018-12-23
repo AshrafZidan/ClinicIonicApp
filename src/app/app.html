@@ -1,0 +1,61 @@
+<ion-menu *ngIf="languageInSildClass === 'en'" [content]="content" dir="ltr" id="menuId" side="left">
+
+    <ion-content class="menuContent">
+
+        <ion-toolbar class="headermenu">
+            <img [style.float]="languageInSildClass == 'en' ?'left':'right'" src="assets/img/user4.png">
+            <span>محمد أحمد على</span>
+            <br>
+            <p>مدير قسم البرمجه والتطوير</p>
+
+        </ion-toolbar>
+
+        <ion-list>
+            <ion-item>
+                <ion-icon name="ios-contact"></ion-icon>&nbsp;&nbsp;&nbsp;&nbsp; {{ 'profile' | translate }}</ion-item>
+            <ion-item>
+                <ion-icon name="ios-share-outline"></ion-icon>&nbsp;&nbsp;&nbsp;&nbsp;{{ 'orders' | translate }}</ion-item>
+            <ion-item (click)="logout()">
+                <ion-icon name="log-out" [style.transform]="languageInSildClass == 'en' ?'scaleX(-1)':'scaleX(1)'"></ion-icon>&nbsp;&nbsp;&nbsp;&nbsp;{{ 'logout' | translate }}</ion-item>
+        </ion-list>
+
+    </ion-content>
+
+
+</ion-menu>
+
+<ion-menu *ngIf="languageInSildClass === 'ar'" [content]="content" dir="rtl" id="menuId" side="right">
+
+    <ion-content class="menuContent">
+
+        <ion-toolbar class="headermenu">
+            <img src="assets/img/user4.png">
+            <span>محمد أحمد على</span>
+            <br>
+            <p>مدير قسم البرمجه والتطوير</p>
+
+        </ion-toolbar>
+
+        <ion-list>
+            <ion-item (click)="openPage('Profile')">
+                <ion-icon name="ios-contact"></ion-icon>&nbsp;&nbsp;&nbsp;&nbsp; {{ 'profile' | translate }}</ion-item>
+            <ion-item>
+                <ion-icon name="ios-share-outline"></ion-icon>&nbsp;&nbsp;&nbsp;&nbsp;{{ 'orders' | translate }}</ion-item>
+            <ion-item (click)="logout()">
+                <ion-icon name="log-out"></ion-icon>&nbsp;&nbsp;&nbsp;&nbsp;{{ 'logout' | translate }}</ion-item>
+        </ion-list>
+
+    </ion-content>
+
+
+</ion-menu>
+
+
+
+
+
+<ion-nav id="nav" [root]="rootPage" dir="{{textDir}}" #content swipeBackEnabled="false">
+
+</ion-nav>
+
+<!-- <ion-nav id="nav" #rootNavController [root]="rootPage"></ion-nav> -->

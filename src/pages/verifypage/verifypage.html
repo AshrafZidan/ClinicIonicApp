@@ -1,0 +1,32 @@
+<ion-content padding class="veriy-form" overflow-scroll="false">
+
+    <div class="logo animated fadeInDown">
+        <img src="assets/img/logo.png" alt="shuryan-logo">
+    </div>
+
+    <p class="infoHint animated fadeInDown">{{'verifyText' | translate}}</p>
+    <hr>
+    <form [formGroup]="verifyForm" (ngSubmit)="verify()">
+
+        <ion-list>
+
+            <!-- verifyCode field -->
+            <ion-item class="animated fadeInDown">
+                <ion-label floating [style.transform-origin]="language === 'en' ?'left':''">
+                    <ion-icon [ngClass]="language === 'en' ?'iconEn':'iconAr'" name="ios-unlock-outline"></ion-icon>
+                    {{'code' | translate}} </ion-label>
+                <ion-input formControlName="verifycode" [(ngModel)]="verifyCode" type="text"></ion-input>
+            </ion-item>
+            <p class="validationHint" *ngIf="hasError('verifycode', 'required')">{{ 'require' | translate }}</p>
+            <p class="validationHint" *ngIf="hasError('verifycode', 'maxlength')">{{ 'maxLenghtNumChar' | translate }}</p>
+            <p class="validationHint" *ngIf="!isCorrect"> {{'codeError' | translate}}</p>
+
+        </ion-list>
+
+        <!-- form Btns -->
+        <button ion-button block [disabled]="!verifyForm.valid" type="submit" class="animated fadeInDown">{{ 'verify' | translate }}</button>
+        <button ion-button full clear type="button" [hidden]="resendBtnClicked" (click)="resendCode()" class="resendCode">{{ 'resendCode' | translate }}</button>
+        <!--  -->
+    </form>
+
+</ion-content>
