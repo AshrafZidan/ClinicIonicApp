@@ -69,8 +69,18 @@ public pleaseWait:string=null;
 
 ////////////////////////////////////////////////// form validation ////////////////////////////////////////////////
     this.signUpForm = builder.group({
+
+      
+      'email': ['', [Validators.required,   Validators.email]],
+
       'username': ['', [Validators.required, Validators.minLength(8), Validators.maxLength(128)]],
       'phonenumber': ['', [Validators.required, Validators.minLength(11),Validators.pattern('^01[0-2]{1}[0-9]{8}$')]],
+'address': ['', [Validators.required, Validators.maxLength(11)]],
+'Key': ['', [Validators.required]],
+
+
+
+      
       'password': ['', Validators.compose([Validators.required, Validators.minLength(8), Validators.maxLength(20)
       ])]
       , 'confirmPassword': ['', [Validators.required]]

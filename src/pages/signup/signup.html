@@ -9,6 +9,21 @@
 
         <ion-list>
 
+
+
+               <!-- Email field -->
+               <ion-item class="item1 animated fadeInDown">
+                <ion-label floating [style.transform-origin]="language === 'en' ?'left':''">
+                    <ion-icon [ngClass]="language === 'en' ?'iconEn':'iconAr'" name="ios-mail"></ion-icon>
+                    {{ 'email' | translate }}
+                </ion-label>
+                <ion-input formControlName="email" [(ngModel)]="email" type="email"></ion-input>
+            </ion-item>
+            <p class="validationHint" *ngIf="hasError('email', 'required')">{{ 'require' | translate }}</p>
+            <p class="validationHint" *ngIf="hasError('email', 'email')">{{ 'minLenght8' | translate }}</p>
+            
+
+
             <!-- fullName field -->
             <ion-item class="item1 animated fadeInDown">
                 <ion-label floating [style.transform-origin]="language === 'en' ?'left':''">
@@ -31,6 +46,32 @@
             <p class="validationHint" *ngIf="hasError('phonenumber', 'required')">{{ 'require' | translate }}</p>
             <p class="validationHint" *ngIf="hasError('phonenumber', 'pattern')">أدخل رقم موبايل صحيح</p>
             <p class="validationHint" *ngIf="hasError('phonenumber', 'minlength')">{{ 'minLenght11' | translate }}</p>
+
+
+                      <!-- address. field -->
+                      <ion-item class="item2 animated fadeInDown">
+                        <ion-label floating [style.transform-origin]="language === 'en' ?'left':''">
+                            <ion-icon [ngClass]="language === 'en' ?'iconEn':'iconAr'" name="ios-navigate"></ion-icon>
+                            {{ 'address' | translate }}
+                        </ion-label>
+                        <ion-input formControlName="address" [(ngModel)]="address" type="tel"></ion-input>
+                    </ion-item>
+                    <p class="validationHint" *ngIf="hasError('address', 'required')">{{ 'require' | translate }}</p>
+                     
+                    <p class="validationHint" *ngIf="hasError('address', 'maxLenght')">{{ 'maxLenght' | translate }}</p>
+
+
+                              <!-- Key. field -->
+            <ion-item class="item2 animated fadeInDown">
+                <ion-label floating [style.transform-origin]="language === 'en' ?'left':''">
+                    <ion-icon [ngClass]="language === 'en' ?'iconEn':'iconAr'" name="ios-key"></ion-icon>
+                    {{ 'Key' | translate }}
+                </ion-label>
+                <ion-input formControlName="Key" [(ngModel)]="Key" type="tel"></ion-input>
+            </ion-item>
+            <p class="validationHint" *ngIf="hasError('Key', 'required')">{{ 'require' | translate }}</p>
+        
+
 
             <!-- password field -->
             <ion-item class="item3 animated fadeInDown">
@@ -62,7 +103,7 @@
         <p class="noMatchUserOrPass animated fadeInDown" *ngIf="isCorrect">{{ 'userExist' | translate }}</p>
 
         <!-- form Btns -->
-        <button ion-button block type="submit" [disabled]="!signUpForm.valid || !matchingPasswords(userPassword,userconPassword)" class="animated fadeInDown">{{ 'but_singUp' | translate }}</button>
+        <button ion-button block type="submit" [disabled]="!signUpForm.valid || !matchingPasswords(userPassword,userconPassword)" class="animated fadeInDown app-btn">{{ 'singUp' | translate }}</button>
     </form>
 
 

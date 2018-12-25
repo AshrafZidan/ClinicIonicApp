@@ -1,7 +1,33 @@
 signup-page {
+
+  .signup-form:before {
+    content: " ";
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.8);
+  }
+  
+  .item-ios.item-block .item-inner{
+    border-bottom: 0 !important;
+
+}
+
+
+  
   .signup-form {
     @extend %bg-option;
     background-image: $mainBackground;
+    -webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+background-size: cover;
+
+
+
     .logo {
       text-align: center;
       img {
