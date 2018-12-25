@@ -1,0 +1,114 @@
+<!--
+  Generated template for the AddDepartmentPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+             
+    <ion-title class="text-center">اضافه طلب</ion-title>
+ 
+
+    <button (click)="back()" class="backButton" ion-button clear><ion-icon ios="ios-arrow-forward-outline" md="ios-arrow-forward-outline"></ion-icon></button>
+
+    
+  </ion-navbar>
+
+</ion-header>
+  
+  <ion-content padding class="login-form" overflow-scroll="false">
+  
+    
+    <form [formGroup]="myForm" >
+  
+        <ion-list>
+  
+            <!-- name -->
+            <ion-item style="    margin-bottom: 11px;
+            " class="item1 animated fadeInDown">
+                <ion-label floating [style.transform-origin]="language == 'en' ?'left':''">
+                    <ion-icon [ngClass]="language == 'en' ?'iconEn':'iconAr'" name="ios-bookmark"></ion-icon>
+                  نوع الطلب
+                </ion-label>
+                <ion-select  (ionChange)="tybeChange()"  formControlName="taskTybe">
+                    <ion-option *ngFor="let item of taskTybes"  [selected]="item ==item " [value]="item">{{item}}</ion-option>
+                      </ion-select>
+            </ion-item>
+            <p class="validationHint" *ngIf="hasError('taskTybe', 'required')">هذا الحقل مطللوب إدخالة  </p>
+
+
+            <!-- civilid -->
+            <ion-item style="    margin-bottom: 11px;
+            " class="item1 animated fadeInDown" *ngIf ="taskType == 'vacation'">
+                <ion-label floating [style.transform-origin]="language == 'en' ?'left':''">
+                    <ion-icon [ngClass]="language == 'en' ?'iconEn':'iconAr'" name="ios-bookmark"></ion-icon>
+                  نوع الاجازه
+                </ion-label>
+                <ion-select formControlName="vacationTybe">
+                    <ion-option *ngFor="let item of vacationsTybes;let count = index"  [selected]="item.name ==item.name "  [value]="count">{{item.name}}</ion-option>
+                  
+                  </ion-select>
+            </ion-item>
+  
+  
+            <p class="validationHint" *ngIf="hasError('vacationTybe', 'required')">هذا الحقل مطللوب إدخالة  </p>
+
+
+
+
+            
+            <!-- address -->
+
+            <ion-item style="    margin-bottom: 11px;
+            " class="item1 animated fadeInDown" *ngIf ="taskType == 'vacation'">
+                <ion-label floating [style.transform-origin]="language == 'en' ?'left':''">
+                    <ion-icon [ngClass]="language == 'en' ?'iconEn':'iconAr'" name="ios-calendar"></ion-icon>
+                  تاريخ البدأ
+                </ion-label>
+                <ion-datetime displayFormat="DD/MM/YYYY" max="{{maxDate}}" formControlName="startDate"></ion-datetime>
+            </ion-item>
+  
+  
+            <p class="validationHint" *ngIf="hasError('startDate', 'required')">هذا الحقل مطللوب إدخالة  </p>
+
+
+            <ion-item style="    margin-bottom: 11px;
+            " class="item1 animated fadeInDown" *ngIf ="taskType == 'vacation'">
+                <ion-label floating [style.transform-origin]="language == 'en' ?'left':''">
+                    <ion-icon [ngClass]="language == 'en' ?'iconEn':'iconAr'" name="ios-create-outline"></ion-icon>
+                  عدد الايام
+                </ion-label>
+                <ion-input formControlName="daysCount" min="1" name="daysCount" [(ngModel)]="daysCount" type="number" required></ion-input>
+            </ion-item>
+  
+  
+            <p class="validationHint" *ngIf="hasError('daysCount', 'required')">هذا الحقل مطللوب إدخالة  </p>
+         
+
+            <ion-item style="    margin-bottom: 11px;
+            " class="item1 animated fadeInDown" *ngIf ="taskType == 'goFar'">
+                <ion-label floating [style.transform-origin]="language == 'en' ?'left':''">
+                    <ion-icon [ngClass]="language == 'en' ?'iconEn':'iconAr'" name="ios-apps"></ion-icon>
+                  القسم المراد النقل اليه
+                </ion-label>
+                <ion-select formControlName="departmentIndex">
+                    <ion-option *ngFor="let item of departments;let count = index"  [selected]="item.name ==item.name"  [value]="count">{{item.name}}</ion-option>
+                  
+                  </ion-select>
+            </ion-item>
+  
+  
+            <p class="validationHint" *ngIf="hasError('departmentIndex', 'required')">هذا الحقل مطللوب إدخالة  </p>
+
+
+            
+        <!-- form Btns -->
+        <!--[disabled]="!myForm.valid || !myForm.controls.password.valid"-->
+        <button ion-button block type="button" (click)="addTask()"  [disabled]="!myForm.valid" class="animated fadeInDown app-btn"> اضافه  طلب</button>
+        </ion-list>
+    </form>
+  
+   
+  </ion-content>

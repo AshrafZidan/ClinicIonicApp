@@ -1,0 +1,110 @@
+
+
+
+<!-- Main Page For bank -->
+<ion-header>
+
+    <ion-navbar>
+             
+                <ion-title class="text-center">الاجازات</ion-title>
+             
+          
+                <button (click)="back()" class="backButton" ion-button clear><ion-icon ios="ios-arrow-forward-outline" md="ios-arrow-forward-outline"></ion-icon></button>
+          
+                
+              </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+
+           
+    <div *ngIf="vacationsList.length == 0">
+
+        <div class="cart-empty text-center text-capitalize">
+          
+            <div class="cart-image">
+    
+                <!-- <ion-icon class="cart-icon" name="md-sad"></ion-icon> -->
+                <!-- <img class="cart-icon" src="assets/img/sad.png" alt="sad"> -->
+              </div>
+              
+          <h3 class="cart-title" style="    margin-top: 7%;
+          "> لا يوجد محتوى </h3>
+        </div>
+    
+      </div>
+
+
+
+    <ion-list style="padding-top: 15px;">
+    
+
+
+
+
+
+        <!--  Account Number  -->
+
+               
+
+        <ion-item-sliding  *ngFor="let item of vacationsList.slice().reverse()" class="item1 animated fadeInDown">
+                        <ion-item >
+                            <ion-icon 
+                            name="ios-home-outline"></ion-icon>
+            
+            
+                                <div class="account-info">
+                                        <p>
+                                                {{item.name}} 
+                                              </p>
+
+                                              <p>
+                                                 عدد الايام : {{item.daysCount}} 
+                                              </p>
+                              
+                                              <p>
+                                         
+                                                   {{item.desciption}} 
+                                                </p>
+                          
+                                                
+                                </div>
+
+                        </ion-item>
+                     
+                        <ion-item-options class="options"> 
+                       
+                          <button ion-button class="circul" color="danger" (click)="DeleteItem(item)">
+
+                            <ion-icon  name="ios-trash"></ion-icon>
+                         </button>
+
+
+                         <button ion-button class="circul" (click)="EditVacation(item)">
+
+                          <ion-icon  name="ios-pricetag-outline"></ion-icon>
+                         </button> 
+
+<!-- 
+                         <button ion-button color="secondary2" class="circul" (click)="makeCard(item)">
+
+                                <ion-icon  name="ios-card"></ion-icon>
+                               </button>
+  -->
+                            
+                       </ion-item-options> 
+                      </ion-item-sliding>
+
+                  
+            
+
+
+
+        </ion-list>
+
+
+</ion-content>
+
+
+

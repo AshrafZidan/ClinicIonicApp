@@ -1,0 +1,35 @@
+import { NgModule } from '@angular/core';
+import { IonicPageModule, PopoverController } from 'ionic-angular';
+import { TranslateModule} from '@ngx-translate/core';
+
+ ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////// General Classes /////////////////////////////////////////////
+
+
+
+ ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////// Providers /////////////////////////////////////////////
+
+import { Vacationspage } from './vacations';
+import { VacationTypeService } from '../../../providers/vacationType.service';
+ 
+
+@NgModule({
+  declarations: [
+    Vacationspage,
+    
+    
+    
+  ],
+  imports: [
+    IonicPageModule.forChild(Vacationspage),
+    TranslateModule.forChild({})
+
+  ],
+  exports: [
+    Vacationspage
+  ],
+  
+  providers:[ VacationTypeService  ]
+})
+export class MainpageModule {}

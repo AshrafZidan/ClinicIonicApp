@@ -44,7 +44,6 @@ export class Mainpage {
   
   constructor(public app:MyApp,
     public platform: Platform, 
-    public mainpageservice: MainpageService, 
     public navCtrl: NavController, 
     public navParams: NavParams,
     private loading: LoadingController, 
@@ -54,6 +53,9 @@ export class Mainpage {
     platform.registerBackButtonAction(() => {
       platform.exitApp();
     });
+
+    console.log('sssssssssssssssssss');
+    
   }
 
  

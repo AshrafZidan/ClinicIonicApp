@@ -1,0 +1,37 @@
+import { NgModule } from '@angular/core';
+import { IonicPageModule } from 'ionic-angular';
+import { TranslateModule} from '@ngx-translate/core';
+
+ ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////// General Classes /////////////////////////////////////////////
+ 
+
+
+ ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////// Providers /////////////////////////////////////////////
+
+ 
+import { DatePipe } from '@angular/common';
+ import { InboxAdminpage } from './Inbox';
+import { TaskService } from '../../../providers/task.service';
+
+
+@NgModule({
+  declarations: [
+    InboxAdminpage,
+    
+    
+    
+  ],
+  imports: [
+    IonicPageModule.forChild(InboxAdminpage),
+    TranslateModule.forChild({})
+
+  ],
+  exports: [
+    InboxAdminpage
+  ],
+  
+  providers:[ DatePipe  , TaskService]
+})
+export class InboxAdminModule {}

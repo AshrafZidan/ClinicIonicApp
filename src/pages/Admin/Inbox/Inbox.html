@@ -1,0 +1,95 @@
+<!-- Main Page For Admin -->
+<ion-header>
+
+    <ion-navbar>
+
+        <div class="header">
+            <button class="menuButton" end ion-button menuToggle="right">
+                <ion-icon name="menu"></ion-icon>
+            </button>
+
+
+
+
+            <ion-title class="toolbar-title">
+
+
+                <span class="title">صندوق البريد</span>
+            </ion-title>
+        </div>
+
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+
+
+
+    <div *ngIf="inboxList.length == 0">
+
+        <div class="cart-empty text-center text-capitalize">
+
+            <div class="cart-image">
+
+                <!-- <ion-icon class="cart-icon" name="md-sad"></ion-icon> -->
+                <!-- <img class="cart-icon" src="assets/img/sad.png" alt="sad"> -->
+            </div>
+
+            <h3 class="cart-title" style="    margin-top: 7%;
+          "> لاتوجد بيانات </h3>
+        </div>
+
+    </div>
+
+
+
+
+    <ion-list style="    padding-top: 15px;
+    ">
+
+
+
+
+        <ion-item  [ngClass]="{'text-unseen':item.status == 'لم يتم الرد'}" (click)="openDetails(item)" *ngFor="let item of inboxList.slice().reverse()" class="item1 animated fadeInDown" >
+
+            <ion-icon name="ios-mail" ></ion-icon>
+
+
+            <div class="account-info">
+
+                <p>
+                    {{item.taskTybe}}
+                </p>
+
+                <p>
+                    {{item.employeeName}}
+                </p>
+
+                <!-- then content  -->
+                <p>
+
+                    {{item.status}}
+                </p>
+
+
+            </div>
+
+        </ion-item>
+
+
+
+
+
+
+    </ion-list>
+
+
+    <!--         
+ <ion-infinite-scroll  (ionInfinite)="doInfinite($event)">
+    <ion-infinite-scroll-content></ion-infinite-scroll-content>
+  </ion-infinite-scroll> -->
+
+
+
+</ion-content>

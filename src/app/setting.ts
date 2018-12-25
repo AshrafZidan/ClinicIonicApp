@@ -1,5 +1,4 @@
 import { Headers, RequestOptions } from '@angular/http';
-import { sessionData } from '../pages/shared/session-data'
 
 export class setting {
 
@@ -20,7 +19,7 @@ export class setting {
         let contentHeaders = new Headers();
         contentHeaders.append('Accept', 'application/json');
         contentHeaders.append('Content-Type', 'application/json');
-        contentHeaders.append('tkn', sessionData.userToken);
+        // contentHeaders.append('tkn', sessionData.userToken);
         return contentHeaders;
     }
 

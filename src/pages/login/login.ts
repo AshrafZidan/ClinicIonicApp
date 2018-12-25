@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController,MenuController,IonicPage, LoadingController, ViewController, ToastController } from 'ionic-angular';
+import { NavController, MenuController, IonicPage, LoadingController, ViewController, ToastController, App } from 'ionic-angular';
 import 'rxjs/add/operator/catch';
 import { Device } from '@ionic-native/device'
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
@@ -7,18 +7,19 @@ import { Platform } from 'ionic-angular';
 import { TranslateService } from '@ngx-translate/core';
 
 
- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////// General Classes /////////////////////////////////////////////
 
-import { MyApp }  from '../../app/app.component';
-import { sessionData } from '../shared/session-data'
-import { setting } from '../../app/setting'
-import { Language }  from '../../pages/language/language';
+import { MyApp } from '../../app/app.component';
+import { AuthentcationServices } from '../../providers/authentcation.services';
+import { AngularFireAuth } from 'angularfire2/auth';
+import { EmployeeService } from '../../providers/employee.service';
 
 
- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////// Providers /////////////////////////////////////////////
-import { AuthentcationServices } from './../../providers/authentcation-services';
+
+
 
 
 
@@ -32,138 +33,136 @@ export class LoginPage {
   ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   /////////////////////////////////////////////////////// public variables //////////////////////////////////////////
 
-  public email: string = null;
+  public phone: string = null;
   public password: string = null;
   public isCorrect: boolean = true;
-  public language:string;
+  public language: string;
   public browserType: string = null;
   public osType: string = null;
 
   myForm: FormGroup;
 
-///////////////////////////////////////////////////////////// translate key //////////////////////////////////
-public pleaseWait:string=null;
+  ///////////////////////////////////////////////////////////// translate key //////////////////////////////////
+  public pleaseWait: string = null;
 
-  
+
 
   ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   /////////////////////////////////////////////////////// constructor ///////////////////////////////////////////////
-  
+
   constructor(
-    public app:MyApp ,
-    public menuCtrl: MenuController ,
-    private platform: Platform ,
-    private builder: FormBuilder,
-    private loading: LoadingController, 
-    public authServices:AuthentcationServices,
+    public app: MyApp,
+    public menuCtrl: MenuController,
+    public platform: Platform,
+    public builder: FormBuilder,
+    public loading: LoadingController,
+    public authServices: AuthentcationServices,
+ 
     public navCtrl: NavController,
-    private device: Device,
-    private viewCtrl: ViewController,
+    public device: Device,
+    public viewCtrl: ViewController,
     public translate: TranslateService,
-    public toastCtrl: ToastController
+    public toastCtrl: ToastController,
+ 
   ) {
 
-//////////////////////////////////////////////////// operation ///////////////////////////////////////////////////
-this.browserType = this.device.manufacturer + "   /  " + this.device.model;
-this.osType = this.device.platform + "  -  " + this.device.version;
+
+
+    //////////////////////////////////////////////////// operation ///////////////////////////////////////////////////
+    this.browserType = this.device.manufacturer + "   /  " + this.device.model;
+    this.osType = this.device.platform + "  -  " + this.device.version;
+
 
 
     ///////////////////////////////////////////////// validate form //////////////////////////////////////////////
     this.myForm = builder.group({
-      'email': ['', [Validators.required,Validators.email]],
+      'phone': ['', [Validators.required, Validators.minLength(11)]],
       'password': [Validators.required]
     });
-////////////////////////////////////////////////////  translation operation ////////////////////////////////////////
-    this.language=app.translate.store.currentLang;
-    this.language=Language.newlang;
-    if( this.language=="ar"){
-      app.sideMenu="right";
-      app.textDir="rtl";
-    }else{
-      app.sideMenu="left";
-      app.textDir="ltr";
+    ////////////////////////////////////////////////////  translation operation ////////////////////////////////////////
+    this.language = app.translate.store.currentLang;
+    // this.language = Language.newlang;
+    this.language = 'ar';
+    if (this.language == "ar") {
+      app.sideMenu = "right";
+      app.textDir = "rtl";
+    } else {
+      app.sideMenu = "left";
+      app.textDir = "ltr";
     }
-//////////////////////////////////////////////////////// get tarnslation Key ////////////////////////////////    
-    this.translate.get(['pleaseWait']).subscribe((res)=> {
-      this.pleaseWait=res.pleaseWait;
-        });
+    //////////////////////////////////////////////////////// get tarnslation Key ////////////////////////////////    
+    this.translate.get(['pleaseWait']).subscribe((res) => {
+      this.pleaseWait = res.pleaseWait;
+    });
 
 
-  
+
+    localStorage.setItem('lang','ar');
+
+    this.app.menu.swipeEnable(false)
+
+    // let userType = localStorage.getItem('userType');
+    // if (userType != null) {
+    //   if (userType == "Admin") {
+    //     this.openPage('InboxAdminpage')
+
+    //   } else if (userType == 'Employee') {
+    //     this.openPage("InboxEmployeepage")
+
+    //   }
+    // };
+
+
+
   }
 
- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   /////////////////////////////////////////////////////// methods ///////////////////////////////////////////////////
- 
-//   login() {
-//     //////////////////////////////// in side /////////////////////////////////////////////////
- 
-// /////////////////////////////////////////////////////////////////////////////////////////////
-//      let loading = this.loading.create({
-//        content: this.pleaseWait
-//      });
-//      loading.present();
-//      this.authServices.userLogin(this.email, this.password, this.browserType, this.osType,this.language).subscribe(
-//       data => {
-//         console.log(data);
-//         sessionData.saveDataInsession(data);
-//         sessionData.saveDataInLocalStorage();
-
-//         if(data.userDetails.validMobile==false){
-//           sessionData.saveDataInLoginToVerifyCode(this.password);          
-//           this.navCtrl.push("Verifypage");
-//         }else{
-//           this.menuCtrl.enable(true, 'menuId');
-//           this.app.openPage('Mainpage');
-//         }
-          
-//           this.isCorrect = true;
-
-
-
-//           loading.dismiss();
-//          }, error => {
-//          this.isCorrect = false;
-//          loading.dismiss();
-//        }
-//      );
-//   }
-
-
-
-login() {
-       let loading = this.loading.create({
-       content: this.pleaseWait
-     });
-     loading.present();
-
-    //  this.authServices.LoginFirebase(this.email, this.password).then(function (data) {
-
-    //           console.log(data);
-    //           sessionData.saveDataInsession(data);
-    //           sessionData.saveDataInLocalStorage();
-       
-    //  }).catch(err =>{
-    //   this.presentToast(err);
-    //  });
-      
-
-
-
-
-}
   
-  /////////////////////////////////////////////////////////// open any page you want /////////////////////////////////
-  openPage(namePage){
-    this.navCtrl.push(namePage);
+  login() {
+    
+    
+    this.app.openPage('Mainpage')
+    // let loading = this.loading.create({
+    //   content: "رجاء الانتظار"
+    // });
+
+    // loading.present();
+
+    // this.authServices.userLogin(this.myForm.get('phone').value, this.myForm.get('password').value  , this.browserType , this.osType ,this.language ) , data=> {
+
+    // },err => {
+
+    //   loading.dismiss()
+
+    //   this.presentToast('خطأ فى الموبايل او كلمة المرور');
+
+    // };
+  
+ 
+          
+
+
+
+
+
+
   }
 
 
 
 
- ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+  /////////////////////////////////////////////////////////// open any page you want /////////////////////////////////
+  openPage(namePage) {
+    this.navCtrl.setRoot(namePage);
+  }
+
+
+
+
+  ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   /////////////////////////////////////////////////////// General methods ///////////////////////////////////////////
- 
+
 
   private presentToast(text) {
     let toast = this.toastCtrl.create({

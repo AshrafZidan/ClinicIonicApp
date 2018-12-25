@@ -1,0 +1,103 @@
+
+
+
+<!-- Main Page For bank -->
+<ion-header>
+
+        <ion-navbar>
+                   
+          <ion-title class="text-center"><span class="title">{{task.taskTybe}}</span></ion-title>
+       
+      
+          <button (click)="back()" class="backButton" ion-button clear><ion-icon ios="ios-arrow-forward-outline" md="ios-arrow-forward-outline"></ion-icon></button>
+      
+          
+        </ion-navbar>
+      
+      </ion-header>
+
+<ion-content style="">
+
+    <h4 class="section-title text-center">تفاصيل الطلب</h4>
+
+
+    <ion-list style="padding: 15px;">
+    
+        <p>
+            <ion-icon name="ios-bookmark"></ion-icon>
+           <small>نوع الطلب :  </small> <span>{{task.taskTybe}}</span>
+        </p>
+
+
+        
+        <p  *ngIf='task.taskTybe == "طلب اجازه"'>
+                <ion-icon name="ios-contact"></ion-icon>
+
+            <small>اسم الموظف :  </small><span>{{task.employeeName}}</span>
+        </p>
+ 
+
+        <p *ngIf='task.taskTybe == "طلب اجازه"'>
+                <ion-icon name="ios-apps"></ion-icon>
+
+            <small>القسم الحالى :  </small><span>{{task.lastDepartmentName}}</span>
+        </p >
+
+
+        
+        <p  *ngIf='task.taskTybe == "طلب اجازه"'>
+                <ion-icon name="ios-bookmark"></ion-icon>
+          <small>   نوع الاجازه  : </small> <span>{{task.vacationTybe}}</span>
+        </p>
+
+
+
+        <p *ngIf='task.taskTybe == "طلب اجازه"'>
+                <ion-icon name="ios-calendar"></ion-icon>
+                <small> تاريخ البدايه  :  </small> <span>{{task.startDate}}</span>
+        </p>
+
+
+
+        <p *ngIf='task.taskTybe == "طلب اجازه"'>
+                <ion-icon name="ios-create-outline"></ion-icon>
+                <small> عدد الايام :  </small> <span>{{task.daysCount}}   </span>
+        </p>
+
+
+        <p *ngIf='task.taskTybe == "طلب نقل"'>
+                <ion-icon name="ios-apps"></ion-icon>
+                <small> الى قسم :  </small> <span>{{task.newDepartmentName}}</span>
+        </p>
+
+        <p *ngIf="task.status != 'لم يتم الرد'">
+                <ion-icon name="ios-apps"></ion-icon>
+                <small> الرد :  </small> <span>{{task.status}}</span>
+        </p>
+
+        
+   </ion-list>
+</ion-content>
+
+<!-- update Btns-->
+<ion-footer no-shadow *ngIf="userType == 'Admin' && task.status == 'لم يتم الرد'">
+        <ion-grid no-padding>
+            <ion-row>
+                <ion-col col-6>
+                    <button ion-button full class="updateBtn app-btn"  (click)="acceptTask()">
+                        موافقه
+                    </button>
+    
+                </ion-col>
+                <ion-col col-6>
+                    <button ion-button full outline class="cancelBtn" (click)="refuseTask()">
+                        رفض
+                    </button>
+                   
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </ion-footer>
+
+
+

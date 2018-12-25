@@ -1,9 +1,12 @@
 import { sessionData } from './../pages/shared/session-data';
 import { setting } from './../app/setting';
-import { Observable } from 'rxjs/Observable';
-import { Injectable } from '@angular/core';
+ import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
+
+import 'rxjs/Rx';
+import { Observable } from "rxjs/Observable";
+
 
 /*
   Generated class for the PatientServices provider.

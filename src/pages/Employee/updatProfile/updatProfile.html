@@ -1,0 +1,128 @@
+<ion-header>
+
+  
+
+        <ion-navbar>
+             
+            <ion-title class="text-center"> تعديل الملف الشخصى </ion-title>
+         
+      
+            <button (click)="back()" class="backButton" ion-button clear><ion-icon ios="ios-arrow-forward-outline" md="ios-arrow-forward-outline"></ion-icon></button>
+      
+            
+          </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+
+
+    <form [formGroup]="myForm" >
+  
+        <ion-list>
+  
+            <!-- name -->
+            <ion-item style="    margin-bottom: 11px;
+            " class="item1 animated fadeInDown">
+                <ion-label floating [style.transform-origin]="language == 'en' ?'left':''">
+                    <ion-icon [ngClass]="language == 'en' ?'iconEn':'iconAr'" name="ios-person"></ion-icon>
+                  الاسم
+                </ion-label>
+                <ion-input formControlName="name" name="name" [(ngModel)]="employee.name" type="text" required></ion-input>
+            </ion-item>
+  
+  
+            <p class="validationHint" *ngIf="hasError('name', 'required')">هذا الحقل مطللوب إدخالة  </p>
+            <p class="validationHint" *ngIf="hasError('name', 'maxLength')">هذا الحقل يجب الا يتجاوز 45 حرف </p>
+
+
+            <!-- civilid -->
+            <ion-item style="    margin-bottom: 11px;
+            " class="item1 animated fadeInDown">
+                <ion-label floating [style.transform-origin]="language == 'en' ?'left':''">
+                    <ion-icon [ngClass]="language == 'en' ?'iconEn':'iconAr'" name="ios-card"></ion-icon>
+                  رقم البطاقة
+                </ion-label>
+                <ion-input formControlName="civilID" name="civilID" [(ngModel)]="employee.civilID" type="number" required></ion-input>
+            </ion-item>
+  
+  
+            <p class="validationHint" *ngIf="hasError('civilID', 'required')">هذا الحقل مطللوب إدخالة  </p>
+            <p class="validationHint" *ngIf="hasError('civilID', 'maxLength')">هذا الحقل يجب الا يتجاوز 45 حرف </p>
+
+
+
+
+        
+            <!-- address -->
+
+            <ion-item style="    margin-bottom: 11px;
+            " class="item1 animated fadeInDown">
+                <ion-label floating [style.transform-origin]="language == 'en' ?'left':''">
+                    <ion-icon [ngClass]="language == 'en' ?'iconEn':'iconAr'" name="ios-home-outline"></ion-icon>
+                  العنوان
+                </ion-label>
+                <ion-input formControlName="address" name="address" [(ngModel)]="employee.address" type="text" required></ion-input>
+            </ion-item>
+  
+  
+            <p class="validationHint" *ngIf="hasError('address', 'required')">هذا الحقل مطللوب إدخالة  </p>
+            <p class="validationHint" *ngIf="hasError('civilID', 'maxLength')">هذا الحقل يجب الا يتجاوز 45 حرف </p>
+
+
+          <ion-item style="    margin-bottom: 11px;
+            " class="item1 animated fadeInDown">
+                <ion-label floating [style.transform-origin]="language == 'en' ?'left':''">
+                    <ion-icon [ngClass]="language == 'en' ?'iconEn':'iconAr'" name="ios-mail-outline"></ion-icon>
+                  الايميل
+                </ion-label>
+                <ion-input formControlName="email" name="email" [(ngModel)]="userMail" type="email" required></ion-input>
+            </ion-item>
+  
+  
+            <p class="validationHint" *ngIf="hasError('email', 'required')">هذا الحقل مطللوب إدخالة  </p>
+         
+            <p class="validationHint" *ngIf="hasError('email', 'required')">ادخل صيغه صحيحة للايميل  </p>
+
+
+            <p class="validationHint" *ngIf="hasError('email', 'required')">ادخل صيغه صحيحة للايميل  </p>
+            <ion-item style="    margin-bottom: 11px;
+           " class="item1 animated fadeInDown">
+               <ion-label floating [style.transform-origin]="language == 'en' ?'left':''">
+                   <ion-icon [ngClass]="language == 'en' ?'iconEn':'iconAr'" name="ios-key"></ion-icon>
+                   كلمة المرور الحاليه
+               </ion-label>
+               <ion-input formControlName="oldpassword" name="oldpassword" [(ngModel)]="password" type="password" required></ion-input>
+           </ion-item>
+ 
+ 
+           <p class="validationHint" *ngIf="hasError('oldpassword', 'required')">هذا الحقل مطللوب إدخالة  </p>
+ 
+            
+ 
+ 
+
+             <ion-item style="    margin-bottom: 11px;
+            " class="item1 animated fadeInDown">
+                <ion-label floating [style.transform-origin]="language == 'en' ?'left':''">
+                    <ion-icon [ngClass]="language == 'en' ?'iconEn':'iconAr'" name="ios-key"></ion-icon>
+                 كلمة المرور
+                </ion-label>
+                <ion-input formControlName="newpassword" name="newpassword" [(ngModel)]="newpassword" type="password" required></ion-input>
+            </ion-item>
+  
+  
+            <p class="validationHint" *ngIf="hasError('newpassword', 'required')">هذا الحقل مطللوب إدخالة  </p>
+  
+            <p class="validationHint" *ngIf="hasError('newpassword', 'required')">هذا الحقل  يجب الا يقل عن 6 أحرف  </p>
+  
+  
+        <!-- form Btns -->
+        <!--[disabled]="!myForm.valid || !myForm.controls.password.valid"-->
+        <button ion-button block type="button" (click)="update()"  [disabled]="!myForm.valid" class="animated fadeInDown app-btn">   تعديل البيانات</button>
+        </ion-list>
+    </form>
+  
+
+</ion-content>
+

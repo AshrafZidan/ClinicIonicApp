@@ -6,22 +6,22 @@ import { Device } from '@ionic-native/device'
 import {FormsModule} from "@angular/forms";
 import { TranslateModule} from '@ngx-translate/core';
 
-
+ 
 
  ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////// General Classes /////////////////////////////////////////////
 
-import {AppModule} from './../../app/app.module';
-
+ 
  ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////// Providers /////////////////////////////////////////////
 
-import { AuthentcationServices } from './../../providers/authentcation-services';
-
+ 
 
 
 // This Module's Components
 import { LoginPage } from './login';
+import { AuthentcationServices } from '../../providers/authentcation.services';
+import { EmployeeService } from '../../providers/employee.service';
 @NgModule({
     imports: [
         IonicPageModule.forChild(LoginPage),
@@ -35,7 +35,7 @@ import { LoginPage } from './login';
         LoginPage
     ],
   providers: [
-   AuthentcationServices,Device
+   AuthentcationServices,Device, EmployeeService
   ]
 })
 export class LoginModule {

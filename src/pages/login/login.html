@@ -1,51 +1,100 @@
-<ion-content padding class="login-form" overflow-scroll="false">
+<ion-content padding class="login-form" style=" background: url('assets/img/mainbg.jpg') no-repeat center center fixed;
+-webkit-background-size: cover;
+-moz-background-size: cover;
+-o-background-size: cover;
+background-size: cover;
+" overflow-scroll="false">
 
+<!-- <div class="overlay"></div> -->
     <div class="logo animated fadeInDown">
         <img src="assets/img/logo.png">
     </div>
-    <form [formGroup]="myForm" (ngSubmit)="login()">
+    <form [formGroup]="myForm" >
 
         <ion-list>
 
             <!-- mobNo. field -->
-            <ion-item class="item1 animated fadeInDown">
+            <ion-item style="    margin-bottom: 11px;
+            " class="item1 animated fadeInDown">
                 <ion-label floating [style.transform-origin]="language == 'en' ?'left':''">
-                    <ion-icon [ngClass]="language == 'en' ?'iconEn':'iconAr'" name="ios-person"></ion-icon>
-                    {{ 'phoneOrEmail' | translate }}
+                    <ion-icon [ngClass]="language == 'en' ?'iconEn':'iconAr'" name="ios-call"></ion-icon>
+                  رقم التلفون
                 </ion-label>
-                <ion-input formControlName="email" name="email" [(ngModel)]="email" type="text" required></ion-input>
+                <ion-input formControlName="phone" name="phone" [(ngModel)]="phone" type="text" required></ion-input>
             </ion-item>
 
+<!-- 
+            <p class="validationHint" *ngIf="hasError('email', 'required')">هذا الحقل مطللوب إدخالة  </p>
 
-            <p class="validationHint" *ngIf="hasError('email', 'required')">this field required  </p>
-
-            <p class="validationHint" *ngIf="hasError('email', 'email')">enter valid email</p>
-
-            <!-- <p class="validationHint" *ngIf="hasError('username', 'pattern')">أدخل رقم موبايل صحيح</p>
-            <p class="validationHint" *ngIf="hasError('username', 'minlength')">هذا الحقل يجب ألا يقل عن 11 رقم</p> -->
+            <p class="validationHint" *ngIf="hasError('email', 'email')">ادخل الايميل بشكل صحيح</p> -->
+            <!-- <p class="validationHint" *ngIf="hasError('phone', 'pattern')">أدخل رقم موبايل صحيح</p> -->
+            <p class="validationHint" *ngIf="hasError('phone', 'minlength')">هذا الحقل يجب ألا يقل عن 11 رقم</p>
 
             <!-- password field -->
             <ion-item class="item2 animated fadeInDown">
                 <ion-label floating [style.transform-origin]="language === 'en' ?'left':''">
                     <ion-icon [ngClass]="language === 'en' ?'iconEn':'iconAr'" name="ios-lock-outline"></ion-icon>
-                    {{ 'Password' | translate }}
+                    كلمة المرور
                 </ion-label>
                 <ion-input formControlName="password" name="password" [(ngModel)]="password" type="password" required></ion-input>
             </ion-item>
         </ion-list>
 
-        <!-- form Btns -->
+
+          <!-- form Btns -->
         <!--[disabled]="!myForm.valid || !myForm.controls.password.valid"-->
-        <button ion-button block type="submit" [disabled]="!myForm.valid || !myForm.controls.password.valid" class="animated fadeInDown">{{ 'Login' | translate }}</button>
+        <button ion-button block type="button" (click)="login()"  [disabled]="!myForm.valid" class="animated fadeInDown app-btn"> تسجيل الدخول</button>
+
+
+
+
+        <ion-item class="checkbox fadeInDown border-bottom">
+        <ion-row style="width: 100%">
+
+
+            <ion-col>
+
+                
+                    
+                <input class="checkbox-custom myinput"  type="checkbox">
+                   
+                    <p class="remeber">تذكر لى </p>
+                    
+                </ion-col>
+                <ion-col>
+                    <p  class="remeber">
+                        نسيت كلمة المرور ؟
+                    </p>
+                </ion-col>
+            </ion-row>
+        </ion-item>
+      
+
+
+        <ion-item class="fadeInDown" >
+                <ion-row style="width: 100%">
+        
+        
+                    <ion-col>
+        
+                        
+                            
+                            
+                            <p class="remeber"> ليس لديك حساب؟
+                                 </p>
+                            
+                        </ion-col>
+                        <ion-col>
+                            <p  class="remeber">
+                                انشىء حساب جديد   ؟
+                            </p>
+                        </ion-col>
+                    </ion-row>
+                </ion-item>
+      
+                
+
     </form>
 
-    <!-- <p class="noMatchUserOrPass animated fadeInDown" *ngIf="!isCorrect">من فضلك أدخل أسم المستخدم او كلمة السر الصحيحة</p> -->
-
-
-    <div class="reg-forgetBtns">
-        <button ion-button clear type="button" (click)="openPage('Forgetpassword')" class="animated fadeInDown forgetpassBtn">{{ 'ForgetPassword' | translate }}</button>
-        <!-- <p class="noRegister animated fadeInDown">
-            <button ion-button clear (click)="openPage('Signup')">{{ 'register' | translate }}</button>
-        </p> -->
-    </div>
+   
 </ion-content>

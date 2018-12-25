@@ -1,0 +1,101 @@
+page-vacations{
+
+    .list-ios > .item-block:last-child, .list-ios > .item-wrapper:last-child .item-block{
+        border-bottom: 0
+    }
+    text-transform: capitalize;
+    .toolbar-title-md {
+        text-align: center;
+    }
+    ion-content {
+        // @extend %bg-option;
+        // background-image: $mainBackground;
+        button.backButton {
+            float: left;
+            font-size: 2rem;
+            color: #ffffff;
+        }
+        button.menuButton {
+            font-size: 2rem;
+            color: #ffffff;
+            margin: 0px;
+        }
+        div.title {
+            background-color: #36618b;
+            font-size: $main-font-size;
+            padding: 5px;
+            color: #ffffff;
+            text-align: center;
+        }
+        div.mainheader {
+            background-image: url(../assets/img/homebackground.jpg);
+            background-size: cover;
+            padding-bottom: 10px;
+        }
+        .userPhoto {
+            @extend %bg-option;
+            //  background-color: #36618b;
+            background-size: cover;
+            text-align: center;
+            img {
+                border-radius: 50%;
+                width: 60px;
+                height: 60px;
+                border: 2px solid #ffffff;
+            }
+            ion-label {
+                border-bottom: 2px solid #ddd;
+
+                font-size: $main-font-size;
+                color: #ffffff;
+                margin: 0px 8px 2px 0;
+            }
+            ion-label.job {
+                margin: 0px;
+            }
+            #nameLable {
+                font-size: 15px;
+            }
+        }
+    }
+    .header_top{
+        font-size: 20px;
+        text-align: center;
+        background: #88c5cc;
+        padding: 5px;
+        color: #4c4a4a;
+
+     
+      
+    }
+    .item-inner{
+    }
+
+  
+
+}
+
+
+.options{
+    border: 0 !important;
+  padding-top: 10px;
+padding-bottom: 0;
+padding-right: 7px !important;
+
+}
+
+.account-info{
+    padding-left: 20px;
+    width: 85%;
+
+}
+.item-inner .label{
+    // border-bottom: 1px solid #dddddd;
+    font-size: 24px;
+    display: inline-flex;
+    .icon{
+        margin-top: 10px;
+
+    }
+
+}

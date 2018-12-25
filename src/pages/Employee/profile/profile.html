@@ -1,0 +1,82 @@
+
+
+
+<!-- Main Page For bank -->
+<ion-header>
+
+        <ion-navbar>
+             
+                <ion-title class="text-center">الملف الشــخصى </ion-title>
+             
+            
+                <button (click)="back()" class="backButton" ion-button clear><ion-icon ios="ios-arrow-forward-outline" md="ios-arrow-forward-outline"></ion-icon></button>
+            
+                
+              </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+  
+<div class="userPhoto animated fadeInDown">
+         <!-- <img src="../../../assets/icon/avatar.jpg" alt="userImg"> -->
+         <ion-label> {{userData.name}}</ion-label>
+        <!-- <ion-label class="job">مدير قسم البرمجه والتطوير</ion-label> -->
+
+    </div>  
+
+
+
+    <!-- profileContent -->
+
+    <!-- myInfo tab -->
+     <div class="profileData ">
+   
+        <!-- <ion-item >
+            <p class="labelName">
+                الإسم بالكامل : 
+            </p>
+            <p class="nameValue">{{userData.name}}</p>
+        </ion-item> -->
+        <ion-item >
+            <p class="labelName">
+                رقم البطاقة :
+            </p>
+            <p class="nameValue">{{userData.civilID}}</p>
+           
+        </ion-item>
+        <ion-item >
+            <p class="labelName">
+                البريد الإلكتروني :
+            </p>
+            <p class="nameValue">{{userData.email}}</p>
+        </ion-item>
+        <ion-item >
+            <p class="labelName">
+                القسم الحالى :
+            </p>
+            <p class="nameValue">{{userData.deptName}}</p>
+        </ion-item>
+        <ion-item (click)="updateFields('mobile',userData.usermobile)">
+            <p class="labelName">
+
+                العنوان :
+</p>
+            <p class="nameValue">{{userData.address}}</p>
+             
+        </ion-item>
+      
+
+
+
+    </div> 
+
+    <ion-footer   no-border>
+	<ion-toolbar transparent>
+    <button class="app-btn-color" (click)="openUpdatePage()" ion-button full text-uppercase>تعديل البيانات</button>
+	</ion-toolbar>
+</ion-footer>
+</ion-content>
+
+
+
