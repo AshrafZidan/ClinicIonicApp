@@ -12,8 +12,7 @@ import { sessionData } from './../shared/session-data';
 
  ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////// Providers /////////////////////////////////////////////
-import { MainpageService } from './../../providers/mainpage-service';
-
+ 
 
 
 
@@ -27,16 +26,17 @@ import { MainpageService } from './../../providers/mainpage-service';
 
 @IonicPage()
 @Component({
-  selector: 'page-mainpage',
-  templateUrl: 'mainpage.html',
+  selector: 'page-SubService',
+  templateUrl: 'subservice.html',
 })
-export class Mainpage {
+export class SubService {
 
 
   ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   /////////////////////////////////////////////////////// public variables //////////////////////////////////////////
   public today = moment().toISOString();
 
+  language = '';
 
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -51,10 +51,10 @@ export class Mainpage {
     public toastCtrl: ToastController
   ) {
     platform.registerBackButtonAction(() => {
-      platform.exitApp();
+      this.app.openPage("Mainpage");
     });
 
-     
+    this.language = 'ar';
   }
 
  
@@ -62,12 +62,12 @@ export class Mainpage {
   /////////////////////////////////////////////////////// methods ///////////////////////////////////////////////////
  
 
-  openprofile(){
-    this.app.openPage("Profile");
+  back(){
+    this.app.openPage("Mainpage");
   }
 
+  openOrder(){
+    this.app.openPage("Order");
 
-  openSubService(){
-    this.app.openPage("SubService")
   }
 }

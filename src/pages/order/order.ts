@@ -12,8 +12,7 @@ import { sessionData } from './../shared/session-data';
 
  ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////// Providers /////////////////////////////////////////////
-import { MainpageService } from './../../providers/mainpage-service';
-
+ 
 
 
 
@@ -27,10 +26,10 @@ import { MainpageService } from './../../providers/mainpage-service';
 
 @IonicPage()
 @Component({
-  selector: 'page-mainpage',
-  templateUrl: 'mainpage.html',
+  selector: 'page-order',
+  templateUrl: 'order.html',
 })
-export class Mainpage {
+export class Order {
 
 
   ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -51,7 +50,7 @@ export class Mainpage {
     public toastCtrl: ToastController
   ) {
     platform.registerBackButtonAction(() => {
-      platform.exitApp();
+      // platform.exitApp();
     });
 
      
@@ -61,13 +60,8 @@ export class Mainpage {
  ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
   /////////////////////////////////////////////////////// methods ///////////////////////////////////////////////////
  
-
-  openprofile(){
-    this.app.openPage("Profile");
-  }
+ 
 
 
-  openSubService(){
-    this.app.openPage("SubService")
-  }
+ 
 }
