@@ -1,4 +1,19 @@
 page-order {
+    .item1{
+        margin: 20px 15px;
+        margin-bottom: 10px;
+        .main-Info{
+            text-align: center;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 5px;
+            img{
+                width:80px;
+            }
+            .order-head{
+                color:#e8623a;
+            }
+        }
+    }
     .toolbar-title-md {
         text-align: center;
     }
